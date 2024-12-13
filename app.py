@@ -19,12 +19,15 @@ st.header("Welcome to my bin collection webapp")
 
 #driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
 
+options = webdriver.ChromeOptions()
+options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+chrome_driver_binary = r"C:/Users/firerose/Downloads/chromedriver_win32/chromedriver.exe"
+driver = webdriver.Chrome(chrome_driver_binary, options=options)
 
 
 # Using Chrome to access web
-driver = webdriver.Chrome()
+#driver = webdriver.Chrome()
 # Open the website
-#driver.get('https://canvas.case.edu')
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
 # Select the id box
 elem=driver.find_element(By.ID, 'postcode')
