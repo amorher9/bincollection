@@ -22,7 +22,7 @@ st.header("Welcome to my bin collection webapp")
 
 
 # Using Chrome to access web
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome()
 # Open the website
 #driver.get('https://canvas.case.edu')
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
