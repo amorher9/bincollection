@@ -1,17 +1,4 @@
-with some elements being hidden or covered by others when you're attempting to click on them. I also see a few points that could be optimized or corrected.
 
-Here's a checklist of issues to address:
-
-Waiting for elements to become clickable: You're currently using implicitly_wait(10), which might not be enough to ensure that all elements are fully loaded and clickable before interacting with them. It's better to use an explicit wait to ensure the element you're trying to click is actually ready.
-
-Handling the ElementClickInterceptedException: You might encounter this error if something (like a modal, overlay, or even the page itself) is blocking the element you're trying to click. We can use JavaScript to scroll the element into view or perform the click directly using JavaScript.
-
-Headless mode: Sometimes, running Selenium in headless mode (without the browser GUI) can cause issues with rendering or interaction, especially with dynamically loaded elements. You might want to test in non-headless mode to see if the problem is related to the rendering.
-
-Here's the revised version of your script with these adjustments:
-
-python
-Copiar código
 import streamlit as st
 import pandas as pd
 import numpy as np
