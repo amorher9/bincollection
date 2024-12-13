@@ -6,13 +6,23 @@ import selenium #to navigate through the webb
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
 
 
 st.header("Welcome to my bin collection webapp")
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--window-size=1920x1080')
+chrome_options.add_argument('--disable-gpu')
+
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+
+
+
 # Using Chrome to access web
-driver = webdriver.Chrome()
+#driver = webdriver.Chrome()
 # Open the website
 #driver.get('https://canvas.case.edu')
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
