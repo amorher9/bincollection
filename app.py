@@ -8,10 +8,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
 
-#word="casa"
-#st.write("**Si quieres conocer el significado de la palabra, pulsa en el link**")
-#definicionrae="[link]" + "(https:" + "//dle.rae.es/" + word + ")"
-#st.write("**Si quieres conocer el significado RAE de la palabra, pulsa en el**", definicionrae)
+
 st.header("Welcome to my bin collection webapp")
 
 # Using Chrome to access web
@@ -35,11 +32,3 @@ login_button.click()
 driver.implicitly_wait(10)
 driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
 
-#driver.find_element(By.TAG_NAME, 'See bin collection dates for this address').click()
-#driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
-#driver.find_element('.search-button-form').click()
-
-# Find login button
-#login_button2 = driver.find_element(By.ID, 'btn-search-form')
-# Click login
-#login_button.click()
