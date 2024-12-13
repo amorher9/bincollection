@@ -20,8 +20,8 @@ st.header("Welcome to my bin collection webapp")
 #driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
 
 options = webdriver.ChromeOptions()
-options.binary_location = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
-chrome_driver_binary = r"C:/Users/firerose/Downloads/chromedriver_win32/chromedriver.exe"
+options.binary_location = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+chrome_driver_binary = "/usr/local/bin/chromedriver"
 driver = webdriver.Chrome(chrome_driver_binary, options=options)
 
 
