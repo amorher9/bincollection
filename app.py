@@ -36,8 +36,9 @@ login_button = driver.find_element(By.ID, 'btn-search-form')
 # Click login
 login_button.click()
 
-driver.implicitly_wait(10)
-driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
+# el fallo está aquí
+#driver.implicitly_wait(10)
+#driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
 
 #driver.find_element(By.TAG_NAME, 'See bin collection dates for this address').click()
 #driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
