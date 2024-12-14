@@ -25,7 +25,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.os_manager import ChromeType
 
 # Using Chrome to access web
-driver = webdriver.Chrome(Chromedriver.exe's path)
+driver = webdriver.Chrome(options=options)
 # Open the website
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
 # Select the id box
