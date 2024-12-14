@@ -13,8 +13,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
-options = Options()
-options.add_argument("--headless")
 
 st.header("Welcome to my bin collection webapp")
 
@@ -24,8 +22,14 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.os_manager import ChromeType
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
+driver = webdriver.Chrome(chrome_options=chrome_options)
+
+
 # Using Chrome to access web
-driver = webdriver.Chrome(options=options)
+#driver = webdriver.Chrome(options=options)
 # Open the website
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
 # Select the id box
