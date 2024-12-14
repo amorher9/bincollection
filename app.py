@@ -23,7 +23,7 @@ from webdriver_manager.core.os_manager import ChromeType
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
-driver = webdriver.Chrome(chrome_options=chrome_options)
+driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver', chrome_options=chrome_options)
 
 
 # Using Chrome to access web
