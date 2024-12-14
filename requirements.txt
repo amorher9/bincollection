@@ -2,5 +2,5 @@ numpy==2.0.2
 pandas==2.2.3
 streamlit==1.41.0
 selenium==4.27.1
-webdriver-manager==4.2.0
+webdriver-manager
 seleniumbase
