@@ -16,10 +16,8 @@ from selenium.webdriver.chrome.options import Options
 
 st.header("Welcome to my bin collection webapp")
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+
+
 from webdriver_manager.core.os_manager import ChromeType
 
 chrome_options = webdriver.ChromeOptions()
@@ -29,7 +27,7 @@ driver = webdriver.Chrome(chrome_options=chrome_options)
 
 
 # Using Chrome to access web
-#driver = webdriver.Chrome(options=options)
+#driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver', options=options)
 # Open the website
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
 # Select the id box
