@@ -6,6 +6,11 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')  
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome(options=options) 
 
 #word="casa"
 #st.write("**Si quieres conocer el significado de la palabra, pulsa en el link**")
@@ -14,7 +19,7 @@ from selenium.webdriver.common.by import By
 st.header("Welcome to my bin collection webapp")
 
 # Using Chrome to access web
-driver = webdriver.Chrome()
+#driver = webdriver.Chrome()
 # Open the website
 #driver.get('https://canvas.case.edu')
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
