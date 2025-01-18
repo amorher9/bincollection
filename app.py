@@ -1,28 +1,19 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import selenium #to navigate through the webb
+
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-
-
-from selenium.webdriver.chrome.service import Service
-
-
-#According to IA:
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.options import Options
+from webdriver_manager.core.os_manager import ChromeType
 
-import seleniumbase as sb
+def get_driver():
+    return webdriver.Chrome(service=Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()), options=options)
 
-st.header("Welcome to my bin collection webapp")
+options = Options()
+options.add_argument('--disable-gpu')
+options.add_argument('--headless')
 
-service=Service()
-
-options=webdriver.ChromeOptions()
-driver = webdriver.Chrome(service=service, options=options)
-# Open the website
-
+driver = get_driver()
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
+
+st.write("DONE")
