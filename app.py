@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -13,12 +14,6 @@ from selenium.webdriver.chrome.options import Options
 
 import seleniumbase as sb
 
-
-#st.write("hello")
-#word="casa"
-#st.write("**Si quieres conocer el significado de la palabra, pulsa en el link**")
-#definicionrae="[link]" + "(https:" + "//dle.rae.es/" + word + ")"
-#st.write("**Si quieres conocer el significado RAE de la palabra, pulsa en el**", definicionrae)
 st.header("Welcome to my bin collection webapp")
 
 # Using Chrome to access web
@@ -26,29 +21,20 @@ proxy = "20.235.159.154:80"
 diver=sb.Driver(browser='chrome', headless=False, uc=True, proxy=proxy)
 driver = webdriver.Chrome()
 # Open the website
-#driver.get('https://canvas.case.edu')
+
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
 # Select the id box
-elem=driver.find_element(By.ID, 'postcode')
+#elem=driver.find_element(By.ID, 'postcode')
 # Send id information
-elem.send_keys('SK118ED')
+#elem.send_keys('SK118ED')
 # Select the id box
-elem2=driver.find_element(By.ID, 'propertyname')
+#elem2=driver.find_element(By.ID, 'propertyname')
 # Send id information
-elem2.send_keys('6')
+#elem2.send_keys('6')
 # Find login button
-login_button = driver.find_element(By.ID, 'btn-search-form')
-# Click login
-login_button.click()
-
-driver.implicitly_wait(10)
-driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
-
-#driver.find_element(By.TAG_NAME, 'See bin collection dates for this address').click()
-#driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
-#driver.find_element('.search-button-form').click()
-
-# Find login button
-#login_button2 = driver.find_element(By.ID, 'btn-search-form')
+#login_button = driver.find_element(By.ID, 'btn-search-form')
 # Click login
 #login_button.click()
+
+#driver.implicitly_wait(10)
+#driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
