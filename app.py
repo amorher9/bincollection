@@ -6,6 +6,10 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
+
+from selenium.webdriver.chrome.service import Service
+
+
 #According to IA:
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -15,10 +19,10 @@ import seleniumbase as sb
 
 st.header("Welcome to my bin collection webapp")
 
-# Using Chrome to access web
-proxy = "20.235.159.154:80"
-diver=sb.Driver(browser='chrome', headless2=True, uc=True, proxy=proxy)
-#driver = webdriver.Chrome()
+service=Service()
+
+options=webdriver.ChromeOptions()
+driver = webdriver.Chrome(service=service, options=options)
 # Open the website
 
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
