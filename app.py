@@ -18,7 +18,7 @@ st.header("Welcome to my bin collection webapp")
 
 # Using Chrome to access web
 proxy = "20.235.159.154:80"
-diver=sb.Driver(browser='chrome', headless=False, uc=True, proxy=proxy)
+diver=sb.Driver(browser='chrome', headless2=True, uc=True, proxy=proxy)
 driver = webdriver.Chrome()
 # Open the website
 
