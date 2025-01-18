@@ -15,6 +15,5 @@ options.add_argument('--headless')
 
 driver = get_driver()
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
-st.code(driver.page_source)
 
 st.write("DONE")
