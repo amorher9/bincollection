@@ -1,23 +1,21 @@
-import streamlit as st
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-st.header("Nuevo intento bin")
-# define the proxy address and port
-proxy = "20.235.159.154:80"
+from webdriver_manager.core.os_manager import ChromeType
 
-# set Chrome options to run in headless mode using a proxy
+@st.cache_resource
+def get_driver():
+    return webdriver.Chrome(
+        service=Service(
+            ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
+        ),
+        options=options,
+    )
+
 options = Options()
-options.add_argument("--headless=new")
-options.add_argument(f"--proxy-server={proxy}")
+options.add_argument("--disable-gpu")
+options.add_argument("--headless")
 
-# initialize Chrome driver
-driver = webdriver.Chrome(
-    service=Service(ChromeDriverManager().install()),
-    options=options
-)
-
-# navigate to the target webpage
-driver.get("https://httpbin.io/ip")
+driver = get_driver()
+driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
