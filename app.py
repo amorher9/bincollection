@@ -21,3 +21,12 @@ options.add_argument("--headless")
 driver = get_driver()
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
 st.write("DONE")
+
+# Select the id box
+elem=driver.find_element(By.ID, 'postcode')
+# Send id information
+elem.send_keys('SK118ED')
+# Select the id box
+elem2=driver.find_element(By.ID, 'propertyname')
+# Send id information
+elem2.send_keys('6')
