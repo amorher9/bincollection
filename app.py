@@ -6,12 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')  
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome(options=options) 
-
+#st.write("hello")
 #word="casa"
 #st.write("**Si quieres conocer el significado de la palabra, pulsa en el link**")
 #definicionrae="[link]" + "(https:" + "//dle.rae.es/" + word + ")"
@@ -19,7 +14,7 @@ driver = webdriver.Chrome(options=options)
 st.header("Welcome to my bin collection webapp")
 
 # Using Chrome to access web
-#driver = webdriver.Chrome()
+driver = webdriver.Chrome()
 # Open the website
 #driver.get('https://canvas.case.edu')
 driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
@@ -36,9 +31,8 @@ login_button = driver.find_element(By.ID, 'btn-search-form')
 # Click login
 login_button.click()
 
-# el fallo está aquí
-#driver.implicitly_wait(10)
-#driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
+driver.implicitly_wait(10)
+driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
 
 #driver.find_element(By.TAG_NAME, 'See bin collection dates for this address').click()
 #driver.find_element(By.LINK_TEXT, "See bin collection dates for this address").click()
