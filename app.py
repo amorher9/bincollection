@@ -14,7 +14,7 @@ import pytest
 from selenium import webdriver
 from webdriver_manager.firefox import GeckoDriverManager
 
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 
 st.header("Welcome to my bin collection webapp")
 
