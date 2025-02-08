@@ -11,14 +11,15 @@ import subprocess
 import sys
 import pytest
 
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
-options = Options()
-firefox_profile = FirefoxProfile()
-firefox_profile.set_preference("javascript.enabled", False)
-options.profile = firefox_profile
+# selenium 4
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.firefox import GeckoDriverManager
+
+driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
 driver = webdriver.Firefox(options=options)
+
 
 
 #According to IA:
@@ -35,7 +36,7 @@ st.header("Welcome to my bin collection webapp")
 #driver=sb.Driver(browser='chrome', headless=False, uc=True, proxy=proxy)
 
 #options = webdriver.FirefoxOptions()
-driver = webdriver.Firefox(options=options)
+#driver = webdriver.Firefox(options=options)
 
 #driver = webdriver.Chrome()
 # Open the website
