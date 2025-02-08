@@ -18,7 +18,7 @@ firefox_profile = FirefoxProfile()
 firefox_profile.set_preference("javascript.enabled", False)
 options.profile = firefox_profile
 
-    driver = webdriver.Firefox(options=options)
+driver = webdriver.Firefox(options=options)
 
 
 #According to IA:
