@@ -16,6 +16,14 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
+
+from selenium.webdriver.firefox.options import Options
+
+options = Options()
+options.binary_location = r'/Applications/Firefox.app/Contents/MacOS/firefox-bin'
+driver = webdriver.Firefox(executable_path=r'C:\WebDrivers\geckodriver.exe', options=options)
+driver.get('http://google.com/')
+
 options = webdriver.FirefoxOptions()
 
 options.binary_location = firefox_bin
