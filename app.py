@@ -11,6 +11,16 @@ import subprocess
 import sys
 import pytest
 
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
+options = Options()
+firefox_profile = FirefoxProfile()
+firefox_profile.set_preference("javascript.enabled", False)
+options.profile = firefox_profile
+
+    driver = webdriver.Firefox(options=options)
+
+
 #According to IA:
 #from selenium.webdriver.chrome.service import Service
 #from webdriver_manager.chrome import ChromeDriverManager
@@ -24,7 +34,7 @@ st.header("Welcome to my bin collection webapp")
 #proxy = "20.235.159.154:80"
 #driver=sb.Driver(browser='chrome', headless=False, uc=True, proxy=proxy)
 
-options = webdriver.FirefoxOptions()
+#options = webdriver.FirefoxOptions()
 driver = webdriver.Firefox(options=options)
 
 #driver = webdriver.Chrome()
