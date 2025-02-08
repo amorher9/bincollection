@@ -11,38 +11,23 @@ import subprocess
 import sys
 import pytest
 
-# selenium 4
+from selenium.webdriver import FirefoxOptions
 from selenium import webdriver
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from webdriver_manager.firefox import GeckoDriverManager
+import selenium.webdriver.firefox.service as FirefoxService
 
+options = FirefoxOptions()
 
-from selenium.webdriver.firefox.options import Options
+# which firefox
+# /usr/bin/firefox
+options.binary_location = "/Applications/Firefox.app/Contents/MacOS/firefox"
 
-options = Options()
-options.binary_location = r'/Applications/Firefox.app/Contents/MacOS/firefox-bin'
-driver = webdriver.Firefox(executable_path=r'C:\WebDrivers\geckodriver.exe', options=options)
-driver.get('http://google.com/')
+# which geckodriver
+# /snap/bin/geckodriver
+firefoxdriver_bin = "/Users/user/Downloads/geckodriver" 
+service = FirefoxService.Service(executable_path=firefoxdriver_bin)
 
-options = webdriver.FirefoxOptions()
+driver = webdriver.Firefox(service=service, options=options)
 
-options.binary_location = firefox_bin
-
-driver = webdriver.Firefox(options=options)
-
-
-#driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-
-#driver = webdriver.Firefox(options=options)
-
-
-
-#According to IA:
-#from selenium.webdriver.chrome.service import Service
-#from webdriver_manager.chrome import ChromeDriverManager
-#from selenium.webdriver.chrome.options import Options
-
-#import seleniumbase as sb
 
 st.header("Welcome to my bin collection webapp")
 
