@@ -8,20 +8,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 
-#from selenium.webdriver import FirefoxOptions
+from selenium.webdriver import FirefoxOptions
 
-from selenium.webdriver import Firefox
-from selenium.webdriver.firefox.options import Options
 
-opts = Options()
-opts.log.level = "trace"
-browser = Firefox(options=opts)
-
-#opts = FirefoxOptions() #it was working without error
+opts = FirefoxOptions() #it was working without error
 
 #opts.add_argument("--headless") # the error is here. With this, webpage does not start
 #opts.log.level = "trace"
-#browser = webdriver.Firefox(options=opts)
+browser = webdriver.Firefox(options=opts)
 
 st.header("Welcome to my bin collection webapp")
 #browser = webdriver.Firefox()
