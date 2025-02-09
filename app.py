@@ -2,7 +2,15 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-browser = webdriver.Firefox()
+
+from selenium.webdriver import FirefoxOptions
+
+opts = FirefoxOptions()
+opts.add_argument("--headless")
+browser = webdriver.Firefox(options=opts)
+
+
+#browser = webdriver.Firefox()
 
 browser.get('http://www.yahoo.com')
 assert 'Yahoo' in browser.title
