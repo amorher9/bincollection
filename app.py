@@ -11,6 +11,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import FirefoxOptions
 
 opts = FirefoxOptions() #it was working without error
+#opts.add_argument("--headless") # the error is here. With this, webpage does not start
 browser = webdriver.Firefox(options=opts)
 
 st.header("Welcome to my bin collection webapp")
