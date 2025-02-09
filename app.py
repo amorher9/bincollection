@@ -11,9 +11,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import FirefoxOptions
 
 opts = FirefoxOptions() #it was working without error
-
-opts.add_argument("--headless")
-opts.add_argument('--disable-gpu')
 browser = webdriver.Firefox(options=opts)
 
 st.header("Welcome to my bin collection webapp")
