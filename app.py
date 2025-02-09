@@ -22,5 +22,5 @@ browser.get('https://online.cheshireeast.gov.uk/mycollectionday/')
 
 #elem = browser.find_element(By.NAME, 'p')  # Find the search box
 #elem.send_keys('seleniumhq' + Keys.RETURN)
-
+st.write("Has the web opened?")
 browser.quit()
