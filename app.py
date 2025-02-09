@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 
 from selenium.webdriver import FirefoxOptions
 
-#opts = FirefoxOptions() #it was working without error
+opts = FirefoxOptions() #it was working without error
 
 opts.add_argument("--headless")
 browser = webdriver.Firefox(options=opts)
