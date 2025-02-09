@@ -12,7 +12,7 @@ from selenium.webdriver import FirefoxOptions
 
 opts = FirefoxOptions() #it was working without error
 
-opts.add_argument("--headless")
+#opts.add_argument("--headless")
 browser = webdriver.Firefox(options=opts)
 
 st.header("Welcome to my bin collection webapp")
