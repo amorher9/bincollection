@@ -9,10 +9,10 @@ opts = FirefoxOptions()
 opts.add_argument("--headless")
 browser = webdriver.Firefox(options=opts)
 
-
+st.header("Welcome to my bin collection webapp")
 #browser = webdriver.Firefox()
 
-browser.get('http://www.yahoo.com')
+browser.get('https://online.cheshireeast.gov.uk/mycollectionday/')
 assert 'Yahoo' in browser.title
 
 #elem = browser.find_element(By.NAME, 'p')  # Find the search box
