@@ -45,7 +45,7 @@ driver = webdriver.Firefox(
 #st.header("Welcome to my bin collection webapp")
 ##browser = webdriver.Firefox()
 
-browser.get('https://online.cheshireeast.gov.uk/mycollectionday/')
+driver.get('https://online.cheshireeast.gov.uk/mycollectionday/')
 #assert 'Yahoo' in browser.title
 
 #elem = browser.find_element(By.NAME, 'p')  # Find the search box
