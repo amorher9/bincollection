@@ -11,27 +11,39 @@ import os
 
 from selenium.webdriver import FirefoxOptions
 
-#@st.experimental_singleton
-def installff():
-  os.system('sbase install geckodriver')
-  os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
-
-_ = installff()
 from selenium import webdriver
-from selenium.webdriver import FirefoxOptions
-#opts = FirefoxOptions()
-#opts.add_argument("--headless")
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from webdriver_manager.firefox import GeckoDriverManager
+
+URL = ""
+TIMEOUT = 20
+
+st.title("Test Selenium")
+
+firefoxOptions = Options()
+firefoxOptions.add_argument("--headless")
+service = Service(GeckoDriverManager().install())
+driver = webdriver.Firefox(
+    options=firefoxOptions,
+    service=service,
+)
+
+
+
+
+#opts = FirefoxOptions() #it was working without error
+
+#opts.add_argument("--headless") # the error is here. With this, webpage does not start
+##opts.log.level = "trace"
 #browser = webdriver.Firefox(options=opts)
 
-
-opts = FirefoxOptions() #it was working without error
-
-opts.add_argument("--headless") # the error is here. With this, webpage does not start
-#opts.log.level = "trace"
-browser = webdriver.Firefox(options=opts)
-
-st.header("Welcome to my bin collection webapp")
-#browser = webdriver.Firefox()
+#st.header("Welcome to my bin collection webapp")
+##browser = webdriver.Firefox()
 
 browser.get('https://online.cheshireeast.gov.uk/mycollectionday/')
 #assert 'Yahoo' in browser.title
