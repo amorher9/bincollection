@@ -1,4 +1,0 @@
-chromium
-chromium-driver
-firefox-esr
-selenium.WebDriver.ChromeDriver --version 133.0.6943.5300
